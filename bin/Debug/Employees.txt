@@ -1,0 +1,5 @@
+FirstName LastName supervisor(y/n) manager(y/n)//skips this line. dont delete
+Kyle Smith n y
+mary H y y
+colton gibson y y
+cam gromek n n

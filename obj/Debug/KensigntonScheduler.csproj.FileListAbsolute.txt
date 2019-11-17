@@ -1,0 +1,10 @@
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe.config
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\bin\Debug\KensigntonScheduler.pdb
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csprojAssemblyReference.cache
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.Form1.resources
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.Properties.Resources.resources
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.GenerateResource.cache
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.CoreCompileInputs.cache
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.exe
+C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.pdb
