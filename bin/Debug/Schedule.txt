@@ -1,0 +1,140 @@
+Monday
+    Splash Shifts: 
+        w gromek
+        g S
+        b H
+        Nick S
+        matt gibson
+    Maintence Shifts(6am): 
+        cam gromek
+        David Kilbourn
+    Maintence Shifts(2pm): 
+        Sydney Something
+        Kyle Smith
+    Managers: 
+        colton gibson
+        scott Smith
+Tuesday
+    Splash Shifts: 
+        Chloe Something
+        d B
+        c Something
+        h Koehler
+        f Something
+    Maintence Shifts(6am): 
+        Samantha B
+        Kyle Smith
+    Maintence Shifts(2pm): 
+        matt gibson
+        scott Smith
+    Managers: 
+        winston H
+        colton gibson
+Wednesday
+    Splash Shifts: 
+        a Kilbourn
+        i Mitton
+        cam gromek
+        Kyle Smith
+        colton gibson
+    Maintence Shifts(6am): 
+        Rob Mitton
+        h Koehler
+    Maintence Shifts(2pm): 
+        scott Smith
+        Sydney Something
+    Managers: 
+        matt gibson
+        mary H
+Thursday
+    Splash Shifts: 
+        f Something
+        winston H
+        Chloe Something
+        b H
+        Madison No
+    Maintence Shifts(6am): 
+        Rob Mitton
+        e H
+    Maintence Shifts(2pm): 
+        d B
+        scott Smith
+    Managers: 
+        matt gibson
+        Kyle Smith
+Friday
+    Splash Shifts: 
+        i Mitton
+        Chloe Something
+        a Kilbourn
+        winston H
+        g S
+    Maintence Shifts(6am): 
+        Sydney Something
+        f Something
+    Maintence Shifts(2pm): 
+        j No
+        c Something
+    Managers: 
+        matt gibson
+        mary H
+Saturday
+    Splash Shifts: 
+        i Mitton
+        cam gromek
+        f Something
+        colton gibson
+        Samantha B
+    Maintence Shifts(6am): 
+        b H
+        h Koehler
+    Maintence Shifts(2pm): 
+        j No
+        David Kilbourn
+    Managers: 
+        a Kilbourn
+        scott Smith
+Sunday
+    Splash Shifts: 
+        Rob Mitton
+        a Kilbourn
+        f Something
+        Chloe Something
+        Katie Koehler
+    Maintence Shifts(6am): 
+        Omar H
+        colton gibson
+    Maintence Shifts(2pm): 
+        cam gromek
+        h Koehler
+    Managers: 
+        mary H
+        David Kilbourn
+Kyle: 32
+mary: 24
+colton: 40
+cam: 32
+David: 24
+Olivia: 0
+Chloe: 32
+Samantha: 16
+Omar: 8
+Sydney: 24
+Nick: 8
+Katie: 8
+Rob: 24
+Madison: 8
+scott: 40
+winston: 24
+matt: 40
+w: 8
+a: 32
+b: 24
+c: 16
+d: 16
+e: 8
+f: 40
+g: 16
+h: 32
+i: 24
+j: 16

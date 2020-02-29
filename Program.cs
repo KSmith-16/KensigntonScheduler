@@ -31,6 +31,7 @@ namespace KensigntonScheduler
             public bool manager;
             public string firstName;
             public string lastName;
+            public int index;
             
         };
 
@@ -38,11 +39,12 @@ namespace KensigntonScheduler
         {
             public string name;
             public int splashShifts;//1 in shift index
-            public int maintenceShiftsDay;//2
+            public int maintenceShiftsDay;//2 
             public int maintenceShiftsNight;//3
-            public List<int> e_index;
-            public List<int> shift_index;
+            public List<int> e_index;//employees working this day
+            public List<int> shift_index;//shift employee is working, its index correlates to the list above
             public int managerShift;//4
+            //shift variabl;es used to say how many of eacfh shift is in a specfic day 
         }
 
         public List<Employee> employees = new List<Employee>();
@@ -53,117 +55,109 @@ namespace KensigntonScheduler
             importEmployees();//can use this function to import the employee list
         }
 
-        public void CreateSchedule()//cretes and saves the current schedule. randomizes it each time
+        public void CreateSchedule()//creates and saves the current schedule. randomizes it each time
         {
             days.Clear();
             importEmployees();
+            Random randomGen = new Random();
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)//iterates through each day
             {
                 
                 day currentDay = new day();
                 currentDay.name = dayAssigner(i);
                 currentDay.e_index = new List<int>();
                 currentDay.shift_index = new List<int>();
-                Random randomGen = new Random();
-                if (i == 0)///////////should be npt here
-                    //what the fuck does the previous comment mean
-                    //anyway: problem is that workers have greater > 40 hours but not enough workers to fill the chedule so itsin an infiinte loop
-                {
+                
                     currentDay.maintenceShiftsDay = 2;
                     currentDay.maintenceShiftsNight = 2;
                     currentDay.splashShifts = 5;
                     currentDay.managerShift = 2;
-                    for (int j = 0; j < 2; j++)//day shift
+                List<Employee> currentEmployee = new List<Employee>();
+                for (int e = 0; e < employees.Count; e++)
+                {
+                    if (employees[e].hours < 33)
                     {
-                        int randNum = randomGen.Next(0, employees.Count);
-
-                        if (employees[randNum].hours <= 32)
-                        {
-                            Employee temp = new Employee();
-                            temp.firstName = employees[randNum].firstName;
-                            temp.lastName = employees[randNum].lastName;
-                            temp.superviser = employees[randNum].superviser;
-                            temp.manager = employees[randNum].manager;
-                            temp.hours = employees[randNum].hours + 8;
-                            employees[randNum] = temp;
-
-                            currentDay.e_index.Add(randNum);
-                            currentDay.shift_index.Add(2);
-                        }
-                        else
-                        {
-                            j--;
-                        }
-                    }
-                    for (int j = 0; j < 2; j++)//night shift
-                    {
-                        int randNum = randomGen.Next(0, employees.Count);
-
-                        if (employees[randNum].hours <= 32)
-                        {
-                            Employee temp = new Employee();
-                            temp.firstName = employees[randNum].firstName;
-                            temp.lastName = employees[randNum].lastName;
-                            temp.superviser = employees[randNum].superviser;
-                            temp.manager = employees[randNum].manager;
-                            temp.hours = employees[randNum].hours + 8;
-                            employees[randNum] = temp;
-
-                            currentDay.e_index.Add(randNum);
-                            currentDay.shift_index.Add(3);
-                        }
-                        else
-                        {
-                            j--;
-                        }
-                    }
-                    for (int j = 0; j < 5; j++)//splash shift
-                    {
-                        int randNum = randomGen.Next(0, employees.Count);
-
-                        if (employees[randNum].hours <= 32)
-                        {
-                            Employee temp = new Employee();
-                            temp.firstName = employees[randNum].firstName;
-                            temp.lastName = employees[randNum].lastName;
-                            temp.superviser = employees[randNum].superviser;
-                            temp.manager = employees[randNum].manager;
-                            temp.hours = employees[randNum].hours + 8;
-                            employees[randNum] = temp;
-
-                            currentDay.e_index.Add(randNum);
-                            currentDay.shift_index.Add(1);
-                        }
-                        else
-                        {
-                            j--;
-                        }
-                    }
-                    for (int j = 0; j < 2; j++)//manager shift
-                    {
-                        int randNum = randomGen.Next(0, employees.Count);
-
-                        if (employees[randNum].manager)
-                        {
-                            Employee temp = new Employee();
-                            temp.firstName = employees[randNum].firstName;
-                            temp.lastName = employees[randNum].lastName;
-                            temp.superviser = employees[randNum].superviser;
-                            temp.manager = employees[randNum].manager;
-                            temp.hours = employees[randNum].hours + 8;
-                            employees[randNum] = temp;
-
-                            currentDay.e_index.Add(randNum);
-                            currentDay.shift_index.Add(4);
-                        }
-                        else
-                        {
-                            j--;
-                        }
+                        currentEmployee.Add(employees[e]);
                     }
                 }
+
+                for (int j = 0; j < currentDay.managerShift; j++)
+                {
+                    int ran = randomGen.Next(currentEmployee.Count);
+                    Employee temp = currentEmployee[ran];
+                    if (temp.manager)
+                    {
+                        temp.firstName = currentEmployee[ran].firstName;
+                        temp.lastName = currentEmployee[ran].lastName;
+                        temp.superviser = currentEmployee[ran].superviser;
+                        temp.manager = currentEmployee[ran].manager;
+                        temp.hours = currentEmployee[ran].hours + 8;
+                        temp.index = currentEmployee[ran].index;
+
+                        currentDay.e_index.Add(temp.index);
+                        currentDay.shift_index.Add(4);
+                        currentEmployee.RemoveAt(ran);
+                        employees[temp.index] = temp;
+                    }
+                    else
+                    {
+                        j--;
+                    }
+                }
+                for (int j = 0; j < currentDay.maintenceShiftsDay; j++)
+                {
+                    int ran = randomGen.Next(currentEmployee.Count);
+                    Employee temp = currentEmployee[ran];
+                    temp.firstName = currentEmployee[ran].firstName;
+                    temp.lastName = currentEmployee[ran].lastName;
+                    temp.superviser = currentEmployee[ran].superviser;
+                    temp.manager = currentEmployee[ran].manager;
+                    temp.hours = currentEmployee[ran].hours + 8;
+                    temp.index = currentEmployee[ran].index;
+
+                    currentDay.e_index.Add(temp.index);
+                    currentDay.shift_index.Add(2);
+                    currentEmployee.RemoveAt(ran);
+                    employees[temp.index] = temp;
+                }
+                for (int j = 0; j < currentDay.maintenceShiftsNight; j++)
+                {
+                    int ran = randomGen.Next(currentEmployee.Count);
+                    Employee temp = currentEmployee[ran];
+                    temp.firstName = currentEmployee[ran].firstName;
+                    temp.lastName = currentEmployee[ran].lastName;
+                    temp.superviser = currentEmployee[ran].superviser;
+                    temp.manager = currentEmployee[ran].manager;
+                    temp.hours = currentEmployee[ran].hours + 8;
+                    temp.index = currentEmployee[ran].index;
+
+                    currentDay.e_index.Add(temp.index);
+                    currentDay.shift_index.Add(3);
+                    currentEmployee.RemoveAt(ran);
+                    employees[temp.index] = temp;
+                }
+
+                for (int j = 0; j < currentDay.splashShifts; j++)
+                {
+                    int ran = randomGen.Next(currentEmployee.Count);
+                    Employee temp = new Employee();
+
+                    temp.firstName = currentEmployee[ran].firstName;
+                    temp.lastName = currentEmployee[ran].lastName;
+                    temp.superviser = currentEmployee[ran].superviser;
+                    temp.manager = currentEmployee[ran].manager;
+                    temp.hours = currentEmployee[ran].hours + 8;
+                    temp.index = currentEmployee[ran].index;
+
+                    currentDay.e_index.Add(temp.index);
+                    currentDay.shift_index.Add(1);
+                    currentEmployee.RemoveAt(ran);
+                    employees[temp.index] = temp;
+                }
+
                 days.Add(currentDay);
+                
             }
 
             writeToFile();
@@ -210,6 +204,12 @@ namespace KensigntonScheduler
                 }
 
             }
+
+            for (int i = 0; i < employees.Count; i++)
+            {
+                schedule.WriteLine($"{employees[i].firstName}: {employees[i].hours}");
+            }
+            schedule.Flush();
             schedule.Close();
         }
 
@@ -218,13 +218,18 @@ namespace KensigntonScheduler
             employees.Clear();
             var EmployeesReader = new StreamReader(File.OpenRead("Employees.txt"));
             EmployeesReader.ReadLine();
+            int index = 0;
 
             while (!(EmployeesReader.EndOfStream))
             {
                 string line = EmployeesReader.ReadLine();
                 int spaces = 0;
 
+                
                 Employee currentEmployee = new Employee();
+                currentEmployee.index = index;
+                index++;
+
                 currentEmployee.firstName = "";
                 currentEmployee.lastName = "";
                 currentEmployee.manager = false;
@@ -265,7 +270,8 @@ namespace KensigntonScheduler
                     }
                 }
                 employees.Add(currentEmployee);
-            } 
+            }
+            EmployeesReader.DiscardBufferedData();
             EmployeesReader.Close();
         }
 

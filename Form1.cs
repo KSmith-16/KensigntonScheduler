@@ -35,8 +35,9 @@ namespace KensigntonScheduler
             }
             reader.Close();
             */
-            Create.Enabled = false;
+            //Create.Enabled = false;
             scheduling.CreateSchedule();
+            textBox1.Text = textBox1.Text+ "Created\n";
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -45,6 +46,21 @@ namespace KensigntonScheduler
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManagerButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }

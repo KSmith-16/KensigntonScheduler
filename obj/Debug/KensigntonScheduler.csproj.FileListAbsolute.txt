@@ -8,3 +8,23 @@ C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.CoreCompileInputs.cache
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.exe
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.pdb
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe.config
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\bin\Debug\KensigntonScheduler.pdb
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.csprojAssemblyReference.cache
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.Form1.resources
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.Properties.Resources.resources
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.GenerateResource.cache
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.CoreCompileInputs.cache
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.exe
+D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\obj\Debug\KensigntonScheduler.pdb
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe.config
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\bin\Debug\KensigntonScheduler.pdb
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.csprojAssemblyReference.cache
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.Form1.resources
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.Properties.Resources.resources
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.GenerateResource.cache
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.CoreCompileInputs.cache
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.exe
+D:\kyle\Documents\GitHub\Respositories\KensigntonScheduler\obj\Debug\KensigntonScheduler.pdb
