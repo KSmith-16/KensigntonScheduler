@@ -21,31 +21,32 @@ namespace KensigntonScheduler
         }
     }
 
-    
+
+    public struct Employee
+    {
+        public int hours;
+        public bool superviser;
+        public bool manager;
+        public string firstName;
+        public string lastName;
+        public int index;
+
+    };
+
+    public struct day
+    {
+        public string name;
+        public int splashShifts;//1 in shift index
+        public int maintenceShiftsDay;//2 
+        public int maintenceShiftsNight;//3
+        public List<int> e_index;//employees working this day
+        public List<int> shift_index;//shift employee is working, its index correlates to the list above
+        public int managerShift;//4
+                                //shift variabl;es used to say how many of eacfh shift is in a specfic day 
+    }
     public class schedule
     {
-        public struct Employee
-        {
-            public int hours;
-            public bool superviser;
-            public bool manager;
-            public string firstName;
-            public string lastName;
-            public int index;
-            
-        };
-
-        public struct day
-        {
-            public string name;
-            public int splashShifts;//1 in shift index
-            public int maintenceShiftsDay;//2 
-            public int maintenceShiftsNight;//3
-            public List<int> e_index;//employees working this day
-            public List<int> shift_index;//shift employee is working, its index correlates to the list above
-            public int managerShift;//4
-            //shift variabl;es used to say how many of eacfh shift is in a specfic day 
-        }
+        
 
         public List<Employee> employees = new List<Employee>();
         public List<day> days = new List<day>();
@@ -65,14 +66,10 @@ namespace KensigntonScheduler
             {
                 
                 day currentDay = new day();
-                currentDay.name = dayAssigner(i);
+                dayAssigner(i, ref currentDay);
                 currentDay.e_index = new List<int>();
                 currentDay.shift_index = new List<int>();
                 
-                    currentDay.maintenceShiftsDay = 2;
-                    currentDay.maintenceShiftsNight = 2;
-                    currentDay.splashShifts = 5;
-                    currentDay.managerShift = 2;
                 List<Employee> currentEmployee = new List<Employee>();
                 for (int e = 0; e < employees.Count; e++)
                 {
@@ -86,7 +83,7 @@ namespace KensigntonScheduler
                 {
                     int ran = randomGen.Next(currentEmployee.Count);
                     Employee temp = currentEmployee[ran];
-                    if (temp.manager)
+                    if (temp.manager || temp.superviser)
                     {
                         temp.firstName = currentEmployee[ran].firstName;
                         temp.lastName = currentEmployee[ran].lastName;
@@ -275,34 +272,174 @@ namespace KensigntonScheduler
             EmployeesReader.Close();
         }
 
-        public string dayAssigner(int i)
+        public void dayAssigner(int i, ref day tempDay)
         {
-            string answer = "";
-            switch (i)
+            if (i == 0)//monday
             {
-                case 0:
-                    answer = "Monday";
-                    break;
-                case 1:
-                    answer = "Tuesday";
-                    break;
-                case 2:
-                    answer = "Wednesday";
-                    break;
-                case 3:
-                    answer = "Thursday";
-                    break;
-                case 4:
-                    answer = "Friday";
-                    break;
-                case 5:
-                    answer = "Saturday";
-                    break;
-                case 6:
-                    answer = "Sunday";
-                    break;
+                tempDay.name = "Monday";
+                tempDay.splashShifts = 5;
+                tempDay.maintenceShiftsDay = 3;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
             }
-            return answer;
+            else if (i == 1)
+            {
+                tempDay.name = "Tuesday";
+                tempDay.splashShifts = 5;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
+            }
+            else if (i == 2)
+            {
+                tempDay.name = "Wednesday";
+                tempDay.splashShifts = 5;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
+            }
+            else if (i == 3)
+            {
+                tempDay.name = "Thursday";
+                tempDay.splashShifts = 5;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
+            }
+            else if (i == 4)
+            {
+                tempDay.name = "Friday";
+                tempDay.splashShifts = 6;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 3;
+                tempDay.managerShift = 2;
+            }
+            else if (i == 5)
+            {
+                tempDay.name = "Saturday";
+                tempDay.splashShifts = 7;
+                tempDay.maintenceShiftsDay = 3;
+                tempDay.maintenceShiftsNight = 3;
+                tempDay.managerShift = 2;
+            }
+            else if (i == 6)
+            {
+                tempDay.name = "Sunday";
+                tempDay.splashShifts = 7;
+                tempDay.maintenceShiftsDay = 3;
+                tempDay.maintenceShiftsNight = 3;
+                tempDay.managerShift = 2;
+            }
         }
+
+        public List<day> getDays()
+        {
+            return days;
+        }
+
+        public List<Employee> getEmployees()
+        {
+            return employees;
+        }
+
+        public void addEmployee(String firstName, String lastName, int pos)//pos 1 for neither, 2 supervisor, 3 manager
+        {
+            Employee tempEmployee = new Employee();
+            tempEmployee.firstName = firstName;
+            tempEmployee.lastName = lastName;
+            tempEmployee.index = employees.Count  + 1;
+            tempEmployee.hours = 0;
+            if (pos == 1)
+            {
+                tempEmployee.superviser = false;
+                tempEmployee.manager = false;
+            }
+            else if (pos == 2)
+            {
+                tempEmployee.superviser = true;
+                tempEmployee.manager = false;
+            }
+            else 
+            {
+                tempEmployee.superviser = true;
+                tempEmployee.manager = true;
+            }
+
+            employees.Add(tempEmployee);
+
+            exportEmployees();
+        }
+
+        private void exportEmployees()
+        {
+            var employeeWriter = new StreamWriter(@"Employees.txt", false);
+            employeeWriter.Flush();
+            employeeWriter.WriteLine("FirstName LastName supervisor(y/n) manager(y/n)//skips this line. dont delete");
+            for (int i = 0; i < employees.Count; i++)
+            {
+                if (employees[i].manager)
+                {
+                    employeeWriter.WriteLine($"{employees[i].firstName} {employees[i].lastName} y y");
+                }
+                else if (employees[i].superviser)
+                {
+                    employeeWriter.WriteLine($"{employees[i].firstName} {employees[i].lastName} y n");
+                }
+                else 
+                {
+                    employeeWriter.WriteLine($"{employees[i].firstName} {employees[i].lastName} n n");
+                }
+            }
+
+            employeeWriter.Flush();
+            employeeWriter.Close();
+        }
+
+        public void deleteEmployee(int empIndex)
+        {
+            employees.RemoveAt(empIndex);
+            for (int i = 0; i < employees.Count; i++)
+            {
+                Employee tempEmployee = new Employee();
+                tempEmployee.firstName = employees[i].firstName;
+                tempEmployee.lastName = employees[i].lastName;
+                tempEmployee.index = i;
+                tempEmployee.hours = 0;
+                tempEmployee.manager = employees[i].manager;
+                tempEmployee.superviser = employees[i].superviser;
+                employees[i] = tempEmployee;
+            }
+
+            exportEmployees();
+        }
+
+        public void updateEmployee(int index, int pos)// 1 = neither, 2 = supervisor, 3 = manager
+        {
+                Employee tempEmployee = new Employee();
+                tempEmployee.firstName = employees[index].firstName;
+                tempEmployee.lastName = employees[index].lastName;
+                tempEmployee.index = employees[index].index;
+                tempEmployee.hours = employees[index].hours;
+            if (pos == 1)
+            {
+                tempEmployee.manager = false;
+                tempEmployee.superviser = false;
+            }
+            else if (pos == 2)
+            {
+                tempEmployee.manager = false;
+                tempEmployee.superviser = true;
+            }
+            else 
+            {
+                tempEmployee.manager = true;
+                tempEmployee.superviser = true;
+            }
+
+                employees[index] = tempEmployee;
+            exportEmployees();
+           
+        }
+
     }
 }

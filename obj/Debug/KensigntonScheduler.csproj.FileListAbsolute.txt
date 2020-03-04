@@ -5,7 +5,6 @@ C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.Form1.resources
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.Properties.Resources.resources
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.GenerateResource.cache
-C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.csproj.CoreCompileInputs.cache
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.exe
 C:\Users\kyle\Documents\GitHub\KensigntonScheduler\obj\Debug\KensigntonScheduler.pdb
 D:\kyle\Documents\New Folder\CIS421Proj\KensigntonScheduler\bin\Debug\KensigntonScheduler.exe.config
