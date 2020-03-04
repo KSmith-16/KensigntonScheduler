@@ -104,7 +104,7 @@ namespace KensigntonScheduler
             string tect = Environment.NewLine;
             for (int i = 0; i < 7; i++)
             {
-                textBox1.AppendText(days[i].name);
+                textBox1.AppendText(days[i].name + tect);
                 textBox1.AppendText("    Splash Shifts:" + tect);
                 for (int j = 0; j < days[i].shift_index.Count; j++)
                 {
