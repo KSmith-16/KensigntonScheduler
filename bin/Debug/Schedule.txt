@@ -1,140 +1,95 @@
 Monday
     Splash Shifts: 
-        cam gromek
-        scott Smith
-        d B
-        Nick S
-        h Koehler
-    Maintence Shifts(6am): 
-        Katie Koehler
-        Olivia H
-    Maintence Shifts(2pm): 
-        j No
-        Rob Mitton
+        Samantha B
+        Rachel Corn
+    Maintence Shifts(9am): 
+        Jade C
+        test 2
+    Maintence Shifts(1pm): 
+        Aric Silver
+        Test 1
     Managers: 
-        colton gibson
-        matt gibson
+        David Kilbourn
 Tuesday
     Splash Shifts: 
-        a Kilbourn
-        Rob Mitton
-        Nick S
-        Olivia H
-        h Koehler
-    Maintence Shifts(6am): 
-        Kyle Smith
-        Madison No
-    Maintence Shifts(2pm): 
-        f Something
-        b H
+        Jade C
+        Aric Silver
+    Maintence Shifts(9am): 
+        test 2
+        Holly NA
+    Maintence Shifts(1pm): 
+        Linnea NA
+        Samantha B
     Managers: 
-        winston H
-        matt gibson
+        Kyle Smith
 Wednesday
     Splash Shifts: 
-        Kyle Smith
-        Katie Koehler
-        cam gromek
-        winston H
-        b H
-    Maintence Shifts(6am): 
-        matt gibson
-        d B
-    Maintence Shifts(2pm): 
-        h Koehler
-        Sydney Something
+        David Kilbourn
+        Aric Silver
+    Maintence Shifts(9am): 
+        Test 1
+        Linnea NA
+    Maintence Shifts(1pm): 
+        Samantha B
+        Sydney NA
     Managers: 
-        scott Smith
-        a Kilbourn
+        Holly NA
 Thursday
     Splash Shifts: 
-        Nick S
-        winston H
-        g S
-        a Kilbourn
-        b H
-    Maintence Shifts(6am): 
-        d B
-        scott Smith
-    Maintence Shifts(2pm): 
-        Madison No
-        i Mitton
+        Holly NA
+        Linnea NA
+    Maintence Shifts(9am): 
+        Rachel Corn
+        test 2
+    Maintence Shifts(1pm): 
+        Jade C
+        Sydney NA
     Managers: 
-        matt gibson
-        David Kilbourn
+        Kyle Smith
 Friday
     Splash Shifts: 
-        f Something
-        cam gromek
-        Omar H
-        colton gibson
-        matt gibson
-    Maintence Shifts(6am): 
-        b H
-        h Koehler
-    Maintence Shifts(2pm): 
-        e H
-        g S
+        Holly NA
+        Sydney NA
+    Maintence Shifts(9am): 
+        Rachel Corn
+        Samantha B
+    Maintence Shifts(1pm): 
+        Test 1
+        Linnea NA
     Managers: 
-        scott Smith
-        mary H
+        David Kilbourn
 Saturday
     Splash Shifts: 
-        Katie Koehler
-        w gromek
-        David Kilbourn
-        h Koehler
-        Rob Mitton
-    Maintence Shifts(6am): 
-        b H
-        mary H
-    Maintence Shifts(2pm): 
-        a Kilbourn
-        Madison No
+        Kyle Smith
+        Linnea NA
+    Maintence Shifts(9am): 
+        test 2
+        Holly NA
+    Maintence Shifts(1pm): 
+        Test 1
+        Jade C
     Managers: 
-        colton gibson
-        winston H
+        David Kilbourn
 Sunday
     Splash Shifts: 
         David Kilbourn
-        g S
-        i Mitton
-        f Something
-        cam gromek
-    Maintence Shifts(6am): 
-        winston H
-        a Kilbourn
-    Maintence Shifts(2pm): 
-        Olivia H
-        Madison No
+        Rachel Corn
+    Maintence Shifts(9am): 
+        Aric Silver
+        Samantha B
+    Maintence Shifts(1pm): 
+        test 2
+        Sydney NA
     Managers: 
         Kyle Smith
-        mary H
-Kyle: 24
-mary: 24
-colton: 24
-cam: 32
-David: 24
-Olivia: 24
-Chloe: 0
-Samantha: 0
-Omar: 8
-Sydney: 8
-Nick: 24
-Katie: 24
-Rob: 24
-Madison: 32
-scott: 32
-winston: 40
-matt: 40
-w: 8
-a: 40
-b: 40
-c: 0
-d: 24
-e: 8
-f: 24
-g: 24
-h: 40
-i: 16
-j: 8
+David: 40
+Kyle: 32
+Holly: 40
+Jade: 32
+Rachel: 32
+Aric: 32
+Samantha: 40
+Linnea: 40
+Sydney: 32
+Test: 32
+test: 40

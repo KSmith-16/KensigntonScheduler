@@ -113,7 +113,7 @@ namespace KensigntonScheduler
                         textBox1.AppendText("        " + employees[days[i].e_index[j]].firstName + " " + employees[days[i].e_index[j]].lastName+tect);
                     }
                 }
-                textBox1.AppendText("    Maintence Shifts(6am): "+tect);
+                textBox1.AppendText("    Maintence Shifts(9am): "+tect);//used to be 6am maintence
                 for (int j = 0; j < days[i].shift_index.Count; j++)
                 {
                     if (days[i].shift_index[j] == 2)
@@ -122,7 +122,7 @@ namespace KensigntonScheduler
                     }
                 }
 
-                textBox1.AppendText("    Maintence Shifts(2pm): "+tect);
+                textBox1.AppendText("    Maintence Shifts(1pm): "+tect);//used to be 2pm maintence
                 for (int j = 0; j < days[i].shift_index.Count; j++)
                 {
                     if (days[i].shift_index[j] == 3)

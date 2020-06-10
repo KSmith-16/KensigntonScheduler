@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace KensigntonScheduler
 {
     static class Program
@@ -20,8 +21,7 @@ namespace KensigntonScheduler
             Application.Run(new Form1());
         }
     }
-
-
+    
     public struct Employee
     {
         public int hours;
@@ -50,9 +50,11 @@ namespace KensigntonScheduler
 
         public List<Employee> employees = new List<Employee>();
         public List<day> days = new List<day>();
+        private Calendar daysOff;
 
         public schedule()
         {
+            daysOff = new Calendar();
             importEmployees();//can use this function to import the employee list
         }
 
@@ -64,7 +66,8 @@ namespace KensigntonScheduler
 
             for (int i = 0; i < 7; i++)//iterates through each day
             {
-                
+                //sometimes runs into problem where cant put anyone else in a day at end of week because people have too many hours at beginning
+
                 day currentDay = new day();
                 dayAssigner(i, ref currentDay);
                 currentDay.e_index = new List<int>();
@@ -174,7 +177,7 @@ namespace KensigntonScheduler
                         schedule.WriteLine("        " + employees[days[i].e_index[j]].firstName + " " + employees[days[i].e_index[j]].lastName);
                     }
                 }
-                schedule.WriteLine("    Maintence Shifts(6am): ");
+                schedule.WriteLine("    Maintence Shifts(9am): ");
                 for (int j = 0; j < days[i].shift_index.Count; j++)
                 {
                     if (days[i].shift_index[j] == 2)
@@ -183,7 +186,7 @@ namespace KensigntonScheduler
                     }
                 }
 
-                schedule.WriteLine("    Maintence Shifts(2pm): ");
+                schedule.WriteLine("    Maintence Shifts(1pm): ");
                 for (int j = 0; j < days[i].shift_index.Count; j++)
                 {
                     if (days[i].shift_index[j] == 3)
@@ -277,15 +280,15 @@ namespace KensigntonScheduler
             if (i == 0)//monday
             {
                 tempDay.name = "Monday";
-                tempDay.splashShifts = 5;
-                tempDay.maintenceShiftsDay = 3;
+                tempDay.splashShifts = 2;
+                tempDay.maintenceShiftsDay = 2;
                 tempDay.maintenceShiftsNight = 2;
                 tempDay.managerShift = 1;
             }
             else if (i == 1)
             {
                 tempDay.name = "Tuesday";
-                tempDay.splashShifts = 5;
+                tempDay.splashShifts = 2;
                 tempDay.maintenceShiftsDay = 2;
                 tempDay.maintenceShiftsNight = 2;
                 tempDay.managerShift = 1;
@@ -293,7 +296,7 @@ namespace KensigntonScheduler
             else if (i == 2)
             {
                 tempDay.name = "Wednesday";
-                tempDay.splashShifts = 5;
+                tempDay.splashShifts = 2;
                 tempDay.maintenceShiftsDay = 2;
                 tempDay.maintenceShiftsNight = 2;
                 tempDay.managerShift = 1;
@@ -301,7 +304,7 @@ namespace KensigntonScheduler
             else if (i == 3)
             {
                 tempDay.name = "Thursday";
-                tempDay.splashShifts = 5;
+                tempDay.splashShifts = 2;
                 tempDay.maintenceShiftsDay = 2;
                 tempDay.maintenceShiftsNight = 2;
                 tempDay.managerShift = 1;
@@ -309,26 +312,26 @@ namespace KensigntonScheduler
             else if (i == 4)
             {
                 tempDay.name = "Friday";
-                tempDay.splashShifts = 6;
+                tempDay.splashShifts = 2;
                 tempDay.maintenceShiftsDay = 2;
-                tempDay.maintenceShiftsNight = 3;
-                tempDay.managerShift = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
             }
             else if (i == 5)
             {
                 tempDay.name = "Saturday";
-                tempDay.splashShifts = 7;
-                tempDay.maintenceShiftsDay = 3;
-                tempDay.maintenceShiftsNight = 3;
-                tempDay.managerShift = 2;
+                tempDay.splashShifts = 2;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
             }
             else if (i == 6)
             {
                 tempDay.name = "Sunday";
-                tempDay.splashShifts = 7;
-                tempDay.maintenceShiftsDay = 3;
-                tempDay.maintenceShiftsNight = 3;
-                tempDay.managerShift = 2;
+                tempDay.splashShifts = 2;
+                tempDay.maintenceShiftsDay = 2;
+                tempDay.maintenceShiftsNight = 2;
+                tempDay.managerShift = 1;
             }
         }
 
